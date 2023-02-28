@@ -5,11 +5,13 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Main m=new Main();
+        Main m = new Main();
         //m.fibonacciSeries();
-        m.primeNumber();
+        //m.primeNumber();
+        m.reverseNumber();
     }
-    public void fibonacciSeries(){
+
+    public void fibonacciSeries() {
         System.out.println("Enter how many numbers in the fibonacci series to print:- ");
         int limit = sc.nextInt();
         int num1 = 0;
@@ -25,25 +27,39 @@ public class Main {
             i++;
         }
     }
-    public void primeNumber(){
+
+    public void primeNumber() {
         System.out.println("Enter the number to check:- ");
-        int num= sc.nextInt();
-        int temp=num/2;
-        int count=1;
-        if(num==0||num==1){
-            System.out.println(num+" is not a prime");
-        }else{
-            for (int i = 2; i <=temp ; i++) {
-                if(num%i==0){
+        int num = sc.nextInt();
+        int temp = num / 2;
+        int count = 1;
+        if (num == 0 || num == 1) {
+            System.out.println(num + " is not a prime");
+        } else {
+            for (int i = 2; i <= temp; i++) {
+                if (num % i == 0) {
                     count++;
                 }
             }
-            if(count<=2){
-                System.out.println(num+" is a prime number");
-            }else{
-                System.out.println(num+" is not a prime number");
+            if (count <= 2) {
+                System.out.println(num + " is a prime number");
+            } else {
+                System.out.println(num + " is not a prime number");
             }
         }
+    }
+
+    public void reverseNumber() {
+        System.out.println("Enter number to reverse:- ");
+        int num = sc.nextInt();
+        int temp = 0;
+        int reverse = 0;
+        while (num != 0) {
+            temp = num % 10;
+            reverse = (reverse * 10) + temp;
+            num = num / 10;
+        }
+        System.out.println(reverse);
     }
 
 }
