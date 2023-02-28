@@ -8,7 +8,8 @@ public class Main {
         Main m = new Main();
         //m.fibonacciSeries();
         //m.primeNumber();
-        m.reverseNumber();
+       // m.reverseNumber();
+        m.perfectNumber();
     }
 
     public void fibonacciSeries() {
@@ -60,6 +61,22 @@ public class Main {
             num = num / 10;
         }
         System.out.println(reverse);
+    }
+
+    public void perfectNumber() {
+        System.out.println("Enter a number:-");
+        int num = sc.nextInt();
+        int sum = 0;
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+        if (sum == num) {
+            System.out.println(num + " is a perfect number");
+        } else {
+            System.out.println(num + " is not a perfect number");
+        }
     }
 
 }
